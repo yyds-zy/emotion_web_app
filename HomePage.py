@@ -18,7 +18,7 @@ st.balloons()
 st.title("🤩 Hello, Welcome to Emotional AI!")
 
 # ZhipuAI API Key
-ZHIPU_API_KEY = "b47d93568577490da60a0b90e493da05.qU1uJLTZNSqHsnqX"
+ZHIPU_API_KEY = "12121212121212121212121212121212"  # 替换为你的智谱AI API Key
 
 with st.container():
     st.header("OpenAI Settings")
@@ -28,8 +28,8 @@ with st.container():
        | {st.session_state["openai_api_key"]} | Your OpenAI API key for accessing the OpenAI services. |        
     """)
 
-# ZhipuAI 对话区
-st.header("ZhipuAI 对话")
+# 智谱AI 对话区
+st.header("智谱AI 对话")
 col1, col2 = st.columns([4,1])
 with col1:
     user_input = st.text_input("请输入您的问题：", "", key="zhipuai_input")
@@ -65,8 +65,8 @@ if st.session_state['zhipuai_history']:
         with st.expander(f"你：{q}", expanded=(idx==0)):
             st.markdown(f"**ZhipuAI 回复：**\n{a}")
 
-# ZhipuAI 图片生成区
-st.header("ZhipuAI 图片生成")
+# 智谱AI 图片生成区
+st.header("智谱AI 图片生成")
 col_img1, col_img2 = st.columns([4,1])
 with col_img1:
     img_prompt = st.text_input("请输入你想生成的图片描述：", "", key="zhipuai_img_prompt")
@@ -98,8 +98,8 @@ if st.session_state['zhipuai_img_history']:
             else:
                 st.error(url)
 
-# ZhipuAI 图片/视频理解区
-st.header("ZhipuAI 图片/视频理解")
+# 智谱AI 图片/视频理解区
+st.header("智谱AI 图片/视频理解")
 media_file = st.file_uploader("请上传图片或视频：", type=["jpg", "jpeg", "png", "bmp", "gif", "mp4", "mov", "avi"], key="zhipuai_media_upload")
 media_ask = st.button("理解内容", key="zhipuai_media_ask")
 
